@@ -5,7 +5,7 @@ import { Loader } from '../components';
 
 const Public = (props) => {
     const { component, layout, ...rest } = props;
-    console.log('component', component);
+    console.log('component', component, props);
     const Layout = lazy(() => import(`../layouts/${layout}`));
     const Component = lazy(() => import(`../${component}`));
     const renderLoader = Loader;

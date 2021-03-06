@@ -1,7 +1,7 @@
 const routes = [
     {
         path: '/',
-        component: 'views/guest',
+        component: 'views/sign-in',
         layout:'minimal',
     },
 ]
