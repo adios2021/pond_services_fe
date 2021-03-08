@@ -1,6 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "0.1.0",
+  "homepage": "http://phpstack-413449-1805599.cloudwaysapps.com/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",

@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Minimal = (props) => {
+const AuthLayout = (props) => {
     const { children } = props;
     const classes = useStyles();
 
@@ -87,8 +87,8 @@ const Minimal = (props) => {
     );
 }
 
-Minimal.propTypes = {
+AuthLayout.propTypes = {
     children: PropTypes.node,
 }
 
-export default Minimal;
+export default AuthLayout;
