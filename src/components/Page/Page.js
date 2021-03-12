@@ -6,7 +6,7 @@ const Page = ({ title, children, ...rest }) => {
     return (
         <div {...rest}>
             <HelmetProvider>
-                <Helmet>
+                <Helmet defer={false}>
                     <title>{title} - AD-IOS Base Template</title>
                 </Helmet>
             </HelmetProvider>

@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 import AuthLayout from '../layouts/auth/index'
 
-const LoginPage = lazy(() => import('../views/sign-in'))
+const LoginPage = lazy(() => import('../views/LoginPage'))
 const SignupPage = lazy(() => import('../views/sign-up'))
 
 const routes = [

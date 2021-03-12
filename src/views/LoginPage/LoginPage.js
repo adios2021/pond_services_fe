@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import { useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
@@ -41,7 +42,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SignIn = () => {
+const LoginPage = (props) => {
+    const { login } = props;
     const classes = useStyles();
     const form = useRef('form');
 
@@ -66,6 +68,8 @@ const SignIn = () => {
             ...formValues, 
             submitted: true
         });
+
+        login(formValues);
         console.log('values', formValues)
         setTimeout(() => setFormValues({
             email: '',
@@ -147,9 +151,9 @@ const SignIn = () => {
     );
 }
 
-SignIn.propTypes = {
+LoginPage.propTypes = {
     history: PropTypes.object,
 }
 
-export default SignIn;
+export default LoginPage;
 
