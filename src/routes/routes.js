@@ -1,5 +1,6 @@
 import React, { lazy } from 'react';
 import CommonLayout from '../layouts/common/index'
+import AdminLayout from '../layouts/admin/index'
 
 const LoginPage = lazy(() => import('../views/LoginPage'))
 const SignupPage = lazy(() => import('../views/sign-up'))
@@ -24,8 +25,8 @@ const routes = [
     path: '/dashboard',
     exact: true,
     Component: DashboardPage,
-    Layout:CommonLayout,
-    isPrivate: false,
+    Layout:AdminLayout,
+    isPrivate: true,
   },
 ]
 

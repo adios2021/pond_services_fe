@@ -2,7 +2,16 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+// @material-ui/core components
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+} from '@material-ui/core';
+// @material-ui/icons
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,31 +27,39 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const Topbar = (props) => {
+const Header = (props) => {
     const { className, ...rest } = props;
 
     const classes = useStyles();
 
     return (
       <AppBar
-        {...rest}
         className={clsx(classes.root, className)}
         color='primary'
         position='fixed'
       >
         <Toolbar>
-          <Link to='/' className={classes.link}>
+          {/* <Link to='/' className={classes.link}>
               <Typography variant="h4" className={classes.title}>
                 AD-IOS Base Template
               </Typography>
-          </Link>
+          </Link> */}
+          <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={props.handledrawertoggle}
+              edge="start"
+              className={classes.menuButton}
+          >
+              <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
     );
 }
 
-Topbar.propTypes = {
+Header.propTypes = {
   className: PropTypes.string,
 };
 
-export default Topbar;
+export default Header;
