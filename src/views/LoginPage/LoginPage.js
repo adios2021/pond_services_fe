@@ -66,16 +66,16 @@ const LoginPage = (props) => {
         e.preventDefault();
         setFormValues({
             ...formValues, 
-            submitted: true
+            submitted: false
         });
 
         login(formValues);
-        console.log('values', formValues)
-        setTimeout(() => setFormValues({
-            email: '',
-            password: '',
-            submitted: false
-        }), 5000)
+        // console.log('values', formValues)
+        // setTimeout(() => setFormValues({
+        //     email: '',
+        //     password: '',
+        //     submitted: false
+        // }), 5000)
       };
 
     return (

@@ -1,40 +1,54 @@
 import * as ActionTypes from '../constants/actionTypes';
 import API from '../helpers/api';
 import { push } from 'connected-react-router';
-import moment from 'moment';
 
 export const login = ({ email, password }) => {
-    return async (dispatch) => {
-        dispatch({ type: ActionTypes.LOGIN_AUTH_REQUEST});
-
-        const response = API.auth.login(email, password);
-
-        if (response.status !== 200) {
-            dispatch({
-                type: ActionTypes.LOGIN_AUTH_FAILED,
-                payload: {
-                    error: 'Login Error Message',
-                }
-            })
-
-            return;
-        }
-
-        const { data, access_token } = response;
-        dispatch({
-            type: ActionTypes.LOGIN_AUTH_SUCESS,
-            payload: data
-        })
+  return async (dispatch) => {
+    dispatch({ type: ActionTypes.LOGIN_AUTH_REQUEST});
+    const formdata = {
+      username: email,
+      password,
+      grant_type: 'password',
+      client_id: 2,
+      client_secret: process.env.REACT_APP_API_CLIENT_SECRET,
+    };
+    // console.log('formdata', formdata);
+    await API.auth
+      .login(formdata)
+      .then(async (res) => {
+        const {data, access_token, refresh_token } = res;
 
         localStorage.setItem(
-            'app_name',
-            JSON.stringify({
-                accessToken: access_token,
-                user: data,
-                last_login: moment(),
-            })
-        )
+          'pond_services',
+          JSON.stringify({
+            accessToken: access_token,
+            refreshToken: refresh_token,
+          })
+        );
+        dispatch({
+          type: ActionTypes.LOGIN_AUTH_SUCESS,
+          payload: data,
+        })
+        dispatch(push('/dashboard'));
+        window.location.reload(); //set temporarily
+      })
+      .catch((err) => {
+        console.log('err', err);
+        dispatch({
+          type: ActionTypes.LOGIN_AUTH_FAILED,
+          payload: {
+            error: err.error,
+          },
+        });
+      });
+    return;
+  };
+}
 
-        dispatch(push('/admin/dashboard'));
-    };
+export const logout = () => {
+  return dispatch => {
+    dispatch({type: ActionTypes.LOGOUT_AUTHENTICATION});
+    localStorage.removeItem('pond_services');
+    dispatch(push('/'));
+  }
 }

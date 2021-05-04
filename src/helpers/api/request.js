@@ -1,8 +1,8 @@
 import superagent from 'superagent';
 
 const getToken = () => 
-    localStorage.getItem('app_name')
-        ? JSON.parse(localStorage.getItem('app_name')).accessToken
+    localStorage.getItem('pond_services')
+        ? JSON.parse(localStorage.getItem('pond_services')).accessToken
         : '';
 
 const request = {
@@ -14,7 +14,7 @@ const request = {
                 .set('Content-Type', 'application/json')
                 .set('Cache-Control', 'no-cache')
                 .set('Pragma', 'no-cache')
-                .set('Authorization', `Bearer ${getToken()}`)
+                // .set('Authorization', `Bearer ${getToken()}`)
                 .query(query)
                 .end((error, result) => {
                     if (error) {
@@ -30,24 +30,21 @@ const request = {
     },
 
     post(url, body = {}) {
-        return new Promise( (resolve, reject) => {
+        console.log('post', body);
+        return new Promise(function (resolve, reject){
             superagent
-                .get(`${process.env.REACT_APP_API_URL}${url}`)
+                .post('http://localhost:8000/v1/oauth/token')
+                // .post(`${process.env.REACT_APP_API_URL}${url}`)
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
-                .set('Cache-Control', 'no-cache')
-                .set('Pragma', 'no-cache')
-                .set('Authorization', `Bearer ${getToken()}`)
+                // .set('Authorization', `Bearer ${getToken()}`)
                 .send(body)
-                .end((error, result) => {
-                    if (error) {
-                        return reject({
-                            error: error,
-                            result: result,
-                        });
-                    }
-
-                    resolve(result.body);
+                .then((res) => {
+                    resolve(res.body);
+                })
+                .catch((err) => {
+                    console.log('err', err);
+                    reject(err.response.body);
                 });
         });
     },

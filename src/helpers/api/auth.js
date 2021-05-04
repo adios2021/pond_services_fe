@@ -1,11 +1,12 @@
 import request from './request';
 
 const auth = {
-    async login(email, password) {
-        const response = await request.post('login', { email, password });
+  async login(formdata) {
+    console.log('authjs', formdata);
+    const response = await request.post('oauth/token', formdata);
 
-        return response;
-    }
+    return response;
+  }
 }
 
 export default auth;

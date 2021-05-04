@@ -12,12 +12,12 @@ import routes from './routes';
 import PageNotFound from '../layouts/404';
 import { Loader } from '../components';
 
+const token = localStorage.getItem('pond_services');
+
 const PrivateRoute = (props) => {
   const { history, path, exact, layout, component, renderLoader, ...rest } = props;
   const Component = component;
   const Layout = layout;
-
-  const [token, setToken] = React.useState(false);
 
   if (!token) {
     history.push('/');
@@ -63,6 +63,9 @@ const Routes = (props) => {
               />
             );
         } else {
+          if (token) {
+            history.push('/dashboard');
+          }
           return ( 
             <Route 
               key={0}
