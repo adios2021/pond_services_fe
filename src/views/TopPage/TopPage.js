@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
+// material ui
 import {
     Typography,
     Grid,
@@ -7,8 +8,13 @@ import {
 } from '@material-ui/core';
 
 import { Page } from '../../components/index';
-
+// assets
 import img from '../../assets/images/apc-awg-oase-orig_orig.png';
+
+// components
+import FirstSection from './components/FirstSection';
+import SecondSection from './components/SecondSection';
+import ThirdSection from './components/ThirdSection';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,6 +61,16 @@ const useStyles = makeStyles(theme => ({
       color: '#FFFFFF',
       backgroundColor: '#024B79',
     }
+  },
+  firstSection: {
+
+  },
+  secondSection: {
+    padding: '54px 0',
+  },
+  thirdSection: {
+    backgroundColor: '#F2F2F2',
+    padding: '50px 0',
   }
 }));
 
@@ -73,8 +89,25 @@ const TopPage = (props) => {
             <Button className={classes.bannerButton}>LEARN MORE</Button>
           </Grid>
         </Grid>
-        {/* <img src={img} style={{maxWidth: '100%', height: 'auto',}}/> */}
       </div>
+      <Grid
+        container
+        className={classes.firstSection}
+      >
+        <FirstSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.secondSection}
+      >
+        <SecondSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.thirdSection}
+      >
+        <ThirdSection />
+      </Grid>
     </Page>
   );
 }
