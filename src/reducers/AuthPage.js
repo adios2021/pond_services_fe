@@ -25,6 +25,7 @@ function reducer(state = initialState, action) {
     case ActionTypes.LOGIN_AUTH_FAILED:
       return {
         ...state,
+        error: payload,
         isPending: false,
       };
     default:
