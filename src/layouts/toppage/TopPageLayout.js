@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography } from '@material-ui/core';
 
 import Topbar from './components/Topbar'
+import Footer from './components/Footer'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,6 +37,7 @@ const CommonLayout = (props) => {
         <Grid className={classes.grid} container>
           <Grid className={classes.content} item lg={12} xs={12}>
             <div className={classes.contentBody}>{children}</div>
+            <Footer />
           </Grid>
         </Grid>
       </main>
