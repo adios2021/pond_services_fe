@@ -15,6 +15,7 @@ import img from '../../assets/images/apc-awg-oase-orig_orig.png';
 import FirstSection from './components/FirstSection';
 import SecondSection from './components/SecondSection';
 import ThirdSection from './components/ThirdSection';
+import FourthSection from './components/FourthSection';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -71,6 +72,11 @@ const useStyles = makeStyles(theme => ({
   thirdSection: {
     backgroundColor: '#F2F2F2',
     padding: '50px 0',
+  },
+  fourthSection: {
+    backgroundColor: '#0e1f44',
+    padding: '54px 0',
+    display: 'inherit',
   }
 }));
 
@@ -107,6 +113,12 @@ const TopPage = (props) => {
         className={classes.thirdSection}
       >
         <ThirdSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.fourthSection}
+      >
+        <FourthSection />
       </Grid>
     </Page>
   );
