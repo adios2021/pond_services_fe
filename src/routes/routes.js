@@ -5,17 +5,10 @@ import TopPageLayout from '../layouts/toppage/index';
 
 const TopPage = lazy(() => import('../views/TopPage'))
 const SignupPage = lazy(() => import('../views/sign-up'))
-const DashboardPage = lazy(() => import('../views/DashboardPage'))
+const PageManagement = lazy(() => import('../views/PageManagement'))
 const LoginPage = lazy(() => import('../views/LoginPage'))
 
 const routes = [
-  {
-    path: '/template',
-    exact: true,
-    Component: TopPage,
-    Layout:TopPageLayout,
-    isPrivate: false,
-  },
   {
     path: '/',
     exact: true,
@@ -33,9 +26,16 @@ const routes = [
   {
     path: '/dashboard',
     exact: true,
-    Component: DashboardPage,
+    Component: PageManagement,
     Layout:AdminLayout,
     isPrivate: true,
+  },
+  {
+    path: '/template',
+    exact: true,
+    Component: TopPage,
+    Layout:TopPageLayout,
+    isPrivate: false,
   },
 ]
 

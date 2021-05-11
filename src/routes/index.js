@@ -23,6 +23,10 @@ const PrivateRoute = (props) => {
     history.push('/');
   }
 
+  // if (token && path === '/') {
+  //   history.push('/dashboard');
+  // }
+
   console.log(path);
   return (
     <Route 
@@ -63,9 +67,6 @@ const Routes = (props) => {
               />
             );
         } else {
-          if (token) {
-            history.push('/dashboard');
-          }
           return ( 
             <Route 
               key={0}

@@ -50,5 +50,6 @@ export const logout = () => {
     dispatch({type: ActionTypes.LOGOUT_AUTHENTICATION});
     localStorage.removeItem('pond_services');
     dispatch(push('/'));
+    window.location.reload(); //set temporarily
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 // @material-ui/core components
@@ -11,18 +12,18 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 // @material-ui/icons
 import Dashboard from '@material-ui/icons/Dashboard';
-import KeyboardIcon from '@material-ui/icons/Keyboard';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 // styles
 import styles from './Style';
+import { logout } from '../../../actions/AuthPage';
 
 
 const useStyles = makeStyles(styles);
 
 const Sidebar = (props) => {
+  const { logout } = props;
     const classes = useStyles();
 
     const links = (
@@ -32,18 +33,13 @@ const Sidebar = (props) => {
             <Dashboard />
           </ListItemIcon>
           <ListItemText
-            primary="Dashboard"
+            primary="Page Management"
           />
         </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <KeyboardIcon />
-          </ListItemIcon>
-          <ListItemText
-            primary="Keyboard"
-          />
-        </ListItem>
-        <ListItem button>
+        <ListItem 
+          button
+          onClick={logout}
+        >
           <ListItemIcon>
             <ExitToAppIcon />
           </ListItemIcon>
@@ -92,4 +88,16 @@ Sidebar.propTypes = {
   open: PropTypes.bool,
 };
 
-export default Sidebar;
+const mapDispatchToProps = dispatch => {
+  return {
+      logout: () => (
+          dispatch(logout())
+      )
+  };
+};
+
+export default connect(
+  state => state,
+  mapDispatchToProps
+)(Sidebar);
+

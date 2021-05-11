@@ -33,7 +33,7 @@ const Topbar = (props) => {
         <Toolbar>
           <Link to='/' className={classes.link}>
               <Typography variant="h4" className={classes.title}>
-                AD-IOS Base Template
+                Pond Services
               </Typography>
           </Link>
         </Toolbar>

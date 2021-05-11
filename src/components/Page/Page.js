@@ -7,7 +7,7 @@ const Page = ({ title, children, ...rest }) => {
         <div {...rest}>
             <HelmetProvider>
                 <Helmet defer={false}>
-                    <title>{title} - AD-IOS Base Template</title>
+                    <title>{title} - Pond Services</title>
                 </Helmet>
             </HelmetProvider>
             {children}

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 // import { Dashboard } from '../../actions/AuthPage';
-import DashboardPage from './DashboardPage';
+import PageManagement from './PageManagement';
 
 const mapsDispatchToProps = (dispatch) => ({});
 
-export default connect(null, mapsDispatchToProps)(DashboardPage)
+export default connect(null, mapsDispatchToProps)(PageManagement)
