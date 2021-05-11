@@ -10,14 +10,14 @@ const LoginPage = lazy(() => import('../views/LoginPage'))
 
 const routes = [
   {
-    path: '/',
+    path: '/template',
     exact: true,
     Component: TopPage,
     Layout:TopPageLayout,
     isPrivate: false,
   },
   {
-    path: '/login',
+    path: '/',
     exact: true,
     Component: LoginPage,
     Layout:CommonLayout,

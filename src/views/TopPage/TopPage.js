@@ -16,11 +16,14 @@ import FirstSection from './components/FirstSection';
 import SecondSection from './components/SecondSection';
 import ThirdSection from './components/ThirdSection';
 import FourthSection from './components/FourthSection';
+import FifthSection from './components/FifthSection';
+import SixSection from './components/SixSection';
+import SeventhSection from './components/SeventhSection';
+import LastSection from './components/LastSection';
 
 const useStyles = makeStyles(theme => ({
   root: {
     textAlign: 'center',
-    paddingBottom: 125,
     [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
@@ -77,7 +80,17 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#0e1f44',
     padding: '54px 0',
     display: 'inherit',
-  }
+  },
+  fifthSection: {
+    padding: '54px 0',
+  },
+  seventSection: {
+    backgroundColor: '#0e1f44',
+    padding: '50px 0',
+  },
+  lastSection: {
+    padding: '54px 0',
+  },
 }));
 
 const TopPage = (props) => {
@@ -119,6 +132,30 @@ const TopPage = (props) => {
         className={classes.fourthSection}
       >
         <FourthSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.fifthSection}
+      >
+        <FifthSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.sixSection}
+      >
+        <SixSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.seventSection}
+      >
+        <SeventhSection />
+      </Grid>
+      <Grid
+        container
+        className={classes.lastSection}
+      >
+        <LastSection />
       </Grid>
     </Page>
   );

@@ -178,7 +178,7 @@ const LoginPage = (props) => {
 
 					</Typography>
 				</ValidatorForm>
-				{/* <NotificationAlert {...notificationAlertProps} /> */}
+				<NotificationAlert {...notificationAlertProps} />
 			</Page>
 		</>
 	);

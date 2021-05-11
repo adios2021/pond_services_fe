@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   boxTitle: {
     fontWeight: '700',
     textTransform: 'uppercase',
-    fontSize: '22px',
+    fontSize: '21px',
     color: '#FFFFFF!important',
   }
 }));
