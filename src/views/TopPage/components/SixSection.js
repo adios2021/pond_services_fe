@@ -62,16 +62,16 @@ const SixSection = () => {
   const classes = useStyles();
   return (
     <>
-      <div style={{margin: '0 219px 52px'}}>
-        <Grid item container style={{marginTop: 30}}>
+      <div style={{padding: '0 219px 52px', margin: 'auto'}}>
+        <Grid item xs={12} container style={{marginTop: 30}}>
           <Grid xs={12} md={4}>
-          <Button className={classNames(classes.button, classes.box)}>WANT IT PROFESSIONALLY INSTALLED?</Button>
+            <Button className={classNames(classes.button, classes.box)}>WANT IT PROFESSIONALLY INSTALLED?</Button>
           </Grid>
           <Grid xs={12} md={4}>
-          <Button className={classNames(classes.button, classes.box)}>LEARN MORE ABOUT INSTALLATION SERVICES</Button>
+            <Button className={classNames(classes.button, classes.box)}>LEARN MORE ABOUT INSTALLATION SERVICES</Button>
           </Grid>
           <Grid xs={12} md={4}>
-          <Button className={classNames(classes.button, classes.box)}>POND & WATER FEATURE CONTRACTOR?</Button>
+            <Button className={classNames(classes.button, classes.box)}>POND & WATER FEATURE CONTRACTOR?</Button>
           </Grid>
         </Grid>
         <Grid item xs={12} className={classes.description}>

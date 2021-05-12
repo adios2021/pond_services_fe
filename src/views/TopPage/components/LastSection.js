@@ -20,8 +20,8 @@ const LastSection = () => {
   const classes = useStyles();
   return (
     <>
-      <div style={{margin: '0 219px 52px'}}>
-        <Grid item container style={{marginTop: 30}}>
+      <div style={{padding: '0 219px 52px', margin: 'auto'}}>
+        <Grid item xs={12}style={{marginTop: 30}}>
           <Grid xs={12}>
             <img src={img} style={{maxWidth: '25%', height: 'auto',}}/>
           </Grid>

@@ -30,7 +30,7 @@ export const login = ({ email, password }) => {
           payload: data,
         })
         dispatch(push('/dashboard'));
-        window.location.reload(); //set temporarily
+        window.location.replace('/dashboard'); //set temporarily
       })
       .catch((err) => {
         console.log('err', err);
@@ -50,6 +50,6 @@ export const logout = () => {
     dispatch({type: ActionTypes.LOGOUT_AUTHENTICATION});
     localStorage.removeItem('pond_services');
     dispatch(push('/'));
-    window.location.reload(); //set temporarily
+    window.location.replace('/'); //set temporarily
   }
 }

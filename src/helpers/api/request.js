@@ -33,8 +33,8 @@ const request = {
         console.log('post', body);
         return new Promise(function (resolve, reject){
             superagent
-                .post('http://localhost:8000/v1/oauth/token')
-                // .post(`${process.env.REACT_APP_API_URL}${url}`)
+                // .post('http://localhost:8000/v1/oauth/token')
+                .post(`${process.env.REACT_APP_API_URL}${url}`)
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
                 // .set('Authorization', `Bearer ${getToken()}`)

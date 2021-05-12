@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
 const SeventSection = () => {
   const classes = useStyles();
   return (
-    <div style={{margin: '20px 219px 50px'}}>
+    <div style={{padding: '20px 219px 50px', margin: 'auto'}}>
       <img src={img} style={{maxWidth: '50%', height: 'auto',}}/>
       <Grid item xs={12} className={classes.fourtTitle}>
         <Typography variant="h3" className={classes.h3}>​DOES YOUR BUSINESS SERVICE ANY OF THE FOLLOWING AREAS IN IOWA (IA)?</Typography>
