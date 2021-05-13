@@ -51,43 +51,43 @@ const Routes = (props) => {
 
   return (
     <ReactRouter history={history}>
-    <Switch>
-      {routes.map((route, key) => {
-        const { path, exact, Layout, Component, isPrivate } = route;
-        if (isPrivate) {
-            return (
-              <PrivateRoute
+      <Switch>
+        {routes.map((route, key) => {
+          const { path, exact, Layout, Component, isPrivate } = route;
+          if (isPrivate) {
+              return (
+                <PrivateRoute
+                  key={0}
+                  path={path}
+                  exact={exact}
+                  layout={Layout}
+                  component={Component}
+                  renderLoader={renderLoader}
+                  history={history}
+                />
+              );
+          } else {
+            return ( 
+              <Route 
                 key={0}
                 path={path}
                 exact={exact}
-                layout={Layout}
-                component={Component}
-                renderLoader={renderLoader}
-                history={history}
+                render={(props) => (
+                  <Suspense fallback={renderLoader()}>
+                    <Layout>
+                      <Component {...props} />
+                    </Layout>
+                  </Suspense>
+                )}
               />
             );
-        } else {
-          return ( 
-            <Route 
-              key={0}
-              path={path}
-              exact={exact}
-              render={(props) => (
-                <Suspense fallback={renderLoader()}>
-                  <Layout>
-                    <Component {...props} />
-                  </Layout>
-                </Suspense>
-              )}
-            />
-          );
-        }
-      })}
+          }
+        })}
 
-      <Route path="*">
-        <PageNotFound />
-      </Route>
-    </Switch>
+        <Route path="*">
+          <PageNotFound />
+        </Route>
+      </Switch>
     </ReactRouter>
   );
 
