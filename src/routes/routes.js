@@ -8,6 +8,8 @@ const SignupPage = lazy(() => import('../views/sign-up'))
 const PageManagement = lazy(() => import('../views/PageManagement'))
 const LoginPage = lazy(() => import('../views/LoginPage'))
 
+const GuestPage = lazy(() => import('../views/guest'))
+
 const routes = [
   {
     path: '/',
@@ -34,6 +36,13 @@ const routes = [
     path: '/template',
     exact: true,
     Component: TopPage,
+    Layout:TopPageLayout,
+    isPrivate: false,
+  },
+  {
+    path: '/test',
+    exact: true,
+    Component: GuestPage,
     Layout:TopPageLayout,
     isPrivate: false,
   },
