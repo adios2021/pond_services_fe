@@ -21,13 +21,15 @@ const styles = (theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
+  button: {
+    margin: '25px!important',
+  },
 });
 
 const useStyles = makeStyles(theme => ({
   customDialog: {
-    '& .MuiDialog-paperWidthSm': {
-      width: '600px',
-      height: '500px',
+    '& .MuiButtonBase-root': {
+      margin: 8
     }
   }
 }));
@@ -61,15 +63,18 @@ const DialogActions = withStyles((theme) => ({
 
 const Dialog = (props) => {
   const classes = useStyles();
-  const { open, handleClickOpenDialog, handleCloseDialog } = props;
-  // const [open, setOpen] = React.useState(openModal false);
+  const { open, handleClickOpenDialog, handleCloseDialog, handleAddField } = props;
+  const [field, setField] = React.useState('');
 
-  // const handleClickOpen = () => {
-  //   handleClickOpenDialog();
-  // };
   const handleClose = () => {
     handleCloseDialog();
   };
+
+  const handleSetField = (component) => {
+    console.log('handleSetField', component);
+    handleAddField(component);
+    handleCloseDialog();
+  }
 
   return (
     <div>
@@ -78,16 +83,13 @@ const Dialog = (props) => {
       </Button> */}
       <CustomDialog className={classes.customDialog} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+          Choose Field
         </DialogTitle>
         <DialogContent dividers>
-          
+          <Button className={classes.button} variant="outlined" onClick={() => handleSetField('textField')}>Text Field</Button>
+          <Button className={classes.button} variant="outlined" onClick={() => handleSetField('textArea')}>Text Area</Button>
+          <Button className={classes.button} variant="outlined" onClick={() => handleSetField('file')}>Image Upload</Button>
         </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} variant="contained" color="primary">
-            Add
-          </Button>
-        </DialogActions>
       </CustomDialog>
     </div>
   );
@@ -98,6 +100,7 @@ Dialog.propTypes = {
   open: PropTypes.bool,
   handleClickOpenDialog: PropTypes.func,
   handleCloseDialog: PropTypes.func,
+  handleAddField: PropTypes.func,
 };
 
 export default Dialog;
