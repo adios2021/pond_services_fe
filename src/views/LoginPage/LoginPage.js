@@ -7,9 +7,7 @@ import {
 	Button,
 	Link,
 	Typography,
-	CircularProgress,
 } from '@material-ui/core';
-import { Redirect } from 'react-router-dom';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 import { Page, Loader, NotificationAlert } from '../../components/';
@@ -152,10 +150,7 @@ const LoginPage = (props) => {
 						variant="contained"
 						disabled={formValues.submitted}
 					>
-						{
-							formValues.submitted && 'Your form is submitted!'
-							|| !formValues.submitted && 'SIGN IN'
-						}
+						SIGN IN
 					</Button>
 
 					<Typography color="textSecondary" variant="body1">

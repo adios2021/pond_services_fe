@@ -8,14 +8,24 @@ import {
 import pondicon from '../../../assets/images/pondicon-01.png';
 import img from '../../../assets/images/apc-awg-oase-orig_orig.png';
 const useStyles = makeStyles(theme => ({
+  root: {
+    margin: '20px 219px 50px',
+    [theme.breakpoints.down('sm')]: {
+      margin: 'auto',
+      padding: '0 16px',
+    }
+  },
   h3: {
     padding: '27px 0',
     fontWeight: '700',
     textTransform: 'uppercase',
-    fontSize: '30px',
+    fontSize: 30,
     color: '#fff!important',
     paddingBottom: 10,
     lineHeight: '1em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 25,
+    }
   },
   h5: {
     fontWeight: '700!important',
@@ -24,6 +34,16 @@ const useStyles = makeStyles(theme => ({
     color: '#fff!important',
     paddingBottom: 10,
     lineHeight: '1em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 16,
+    }
+  },
+  company: {
+    display: 'flex',
+    marginTop: 30,
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 20,
+    }
   },
   p: {
     lineHeight: '1.9em',
@@ -35,13 +55,13 @@ const useStyles = makeStyles(theme => ({
 const FourthSection = () => {
   const classes = useStyles();
   return (
-    <div style={{margin: '20px 219px 50px'}}>
+    <div className={classes.root}>
       <Grid item xs={12} className={classes.fourtTitle}>
         <Typography variant="h3" className={classes.h3}>BROWSE OUR (IA) CONTRACTOR LISTINGS</Typography>
         <Typography variant="h5" className={classes.h5}>ATLANTIC | OASE PROFESSIONAL CONTRACTORS IN IOWA</Typography>
       </Grid>
-      <Grid item container style={{display: 'flex', marginTop: 30}}>
-        <Grid xs={12} md={6}>
+      <Grid item container className={classes.company}>
+        <Grid item xs={12} md={6}>
           <img src={pondicon} style={{maxWidth: '25%', height: 'auto',}}/>
           <Typography className={classes.h5}>Your Company Here</Typography>
           <Typography className={classes.h5}></Typography>
@@ -57,7 +77,7 @@ const FourthSection = () => {
           </Typography>
           <img src={img} style={{marginTop: '2.5%', padding: 10, background: '#fff', maxWidth: '40%', height: 'auto',}}/>
         </Grid>
-        <Grid xs={12} md={6}>
+        <Grid item xs={12} md={6}>
         <img src={pondicon} style={{maxWidth: '25%', height: 'auto',}}/>
           <Typography className={classes.h5}>Your Company Here</Typography>
           <Typography className={classes.h5}></Typography>

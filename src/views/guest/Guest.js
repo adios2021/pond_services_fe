@@ -4,15 +4,15 @@ import {
   Grid,
 } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/styles';
+// import { makeStyles } from '@material-ui/styles';
 import { Dialog } from '../../components';
 
 import Form from './Form';
 
-const useStyles = makeStyles(theme => ({}));
+// const useStyles = makeStyles(theme => ({}));
 
 const Guest = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [fields, setFields] = React.useState([
     // { component: 'textArea', content: '' },
     { component: 'textField', content: '' },
@@ -79,7 +79,6 @@ const Guest = () => {
       </Grid>
       <Dialog 
         open={open} 
-        handleClickOpenDialog={handleClickOpenDialog} 
         handleCloseDialog={handleCloseDialog}
         handleAddField={handleAddField}
       />

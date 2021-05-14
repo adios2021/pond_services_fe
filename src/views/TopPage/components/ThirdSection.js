@@ -2,9 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 import {
   Typography,
   Grid,
-  Paper,
 } from '@material-ui/core';
-import classNames from 'classnames';
 
 // assets
 import img from '../../../assets/images/apc-awg-oase-orig_orig.png';
@@ -13,17 +11,36 @@ import image2 from '../../../assets/images/image2.jpg';
 import image3 from '../../../assets/images/image3.jpg';
 import image4 from '../../../assets/images/image4.jpg';
 const useStyles = makeStyles(theme => ({
+  root: {
+    margin: '0 219px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 16px',
+      margin: 'auto',
+    }
+  },
   logo: {
     padding: '30px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '15px 0',
+    },
+    '& img': {
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: '60%!important',
+      }
+    }
   },
   h3: {
     padding: '27px 0',
     fontWeight: '700',
     textTransform: 'uppercase',
-    fontSize: '30px',
+    fontSize: 30,
     color: '#0e1f44!important',
     paddingBottom: 10,
     lineHeight: '1em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 25,
+      padding: '20px 0',
+    }
   },
   h5: {
     fontWeight: '700!important',
@@ -44,7 +61,8 @@ const useStyles = makeStyles(theme => ({
 const ThirdSection = () => {
   const classes = useStyles();
   return (
-    <div style={{margin: '0 219px'}}>
+    <>
+    <div className={classes.root}>
       <Grid item xs={12} className={classes.logo}>
         <img src={img} style={{maxWidth: '100%', height: 'auto',}}/>
       </Grid>
@@ -63,20 +81,21 @@ const ThirdSection = () => {
       </Grid>
 
       <Grid item container style={{marginTop: 30}}>
-        <Grid xs={6} md={3}>
+        <Grid item xs={6} md={3}>
           <img src={image1} style={{maxWidth: '85%', height: 'auto',}}/>
         </Grid>
-        <Grid xs={6} md={3}>
+        <Grid item xs={6} md={3}>
           <img src={image2} style={{maxWidth: '85%', height: 'auto',}}/>
         </Grid>
-        <Grid xs={6} md={3}>
+        <Grid item xs={6} md={3}>
           <img src={image3} style={{maxWidth: '85%', height: 'auto',}}/>
         </Grid>
-        <Grid xs={6} md={3}>
+        <Grid item xs={6} md={3}>
           <img src={image4} style={{maxWidth: '85%', height: 'auto',}}/>
         </Grid>
       </Grid>
     </div>
+    </>
   );
 }
  

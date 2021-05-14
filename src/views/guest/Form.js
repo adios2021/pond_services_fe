@@ -5,7 +5,7 @@ import {
   TextField,
   IconButton,
   FormControl,
-  Input,
+  // Input,
 } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove'
 import AddIcon from '@material-ui/icons/Add';
@@ -147,37 +147,6 @@ const Form = React.memo((props) => {
                 </div>
               )
             }
-            return;
-            // if (field.component === 'textArea') {
-            //   return (
-            //     <div key={index}>
-            //       <FormControl className={classes.formControl}>
-            //         <TextField
-            //           className={classes.textField}
-            //           name="content"
-            //           label="Add Content"
-            //           variant="outlined"
-            //           value={field.content}
-            //           onChange={event => handleChangeInput(index, event)}
-            //         />
-            //         <IconButton
-            //           onClick={() => handleRemoveField(index)}
-            //         >
-            //           <RemoveIcon />
-            //         </IconButton>
-            //         {
-            //           fields.length - 1 === index &&
-            //           <IconButton
-            //             onClick={handleClickOpenDialog}
-            //           >
-            //             <AddIcon/>
-            //           </IconButton>
-            //         }
-            //       </FormControl>
-            //     </div>
-            //   )
-            // }
-
           })
         }
         <Button
@@ -199,7 +168,6 @@ Form.propTypes = {
   handleRemoveField: PropTypes.func,
   handleClickOpenDialog: PropTypes.func,
   handleSubmit: PropTypes.func,
-  // children: PropTypes.node,
 };
 
 export default Form;

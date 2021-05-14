@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar } from '@material-ui/core';
 
 import img from '../../../assets/images/apc-awg-oase-orig_orig.png';
 
@@ -11,6 +11,12 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: 'none',
       height: '11%',
       justifyContent: 'center',
+    },
+    image: {
+      width: '25%',
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',
+      },
     },
     link: {
       textDecoration: 'none',
@@ -37,7 +43,7 @@ const Topbar = (props) => {
       >
         <Toolbar style={{justifyContent: 'center',}}>
           <Link to='/' className={classes.link}>
-              <div style={{width: '25%'}}>
+              <div className={classes.image}>
                 <img src={img} style={{maxWidth: '100%', height: 'auto',}}/>
               </div>
           </Link>

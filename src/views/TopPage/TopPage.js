@@ -2,9 +2,8 @@ import { makeStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 // material ui
 import {
-    Typography,
-    Grid,
-    Button
+  Grid,
+  Button
 } from '@material-ui/core';
 
 import { Page } from '../../components/index';
@@ -24,10 +23,6 @@ import LastSection from './components/LastSection';
 const useStyles = makeStyles(theme => ({
   root: {
     textAlign: 'center',
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
-    }
   },
   title: {
     marginTop: theme.spacing(3),
@@ -71,25 +66,43 @@ const useStyles = makeStyles(theme => ({
   },
   secondSection: {
     padding: '54px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 0',
+    }
   },
   thirdSection: {
     backgroundColor: '#F2F2F2',
     padding: '50px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 0',
+    }
   },
   fourthSection: {
     backgroundColor: '#0e1f44',
     padding: '54px 0',
     display: 'inherit',
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 0',
+    }
   },
   fifthSection: {
     padding: '54px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 0',
+    }
   },
   seventSection: {
     backgroundColor: '#0e1f44',
     padding: '50px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 0',
+    }
   },
   lastSection: {
     padding: '54px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 0',
+    }
   },
 }));
 

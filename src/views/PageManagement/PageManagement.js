@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import MUIDataTable from "mui-datatables";
 
 import { Page } from '../../components/index';
-// import PageManagement from '.';
 
 const useStyles = makeStyles(theme => ({
   root: {

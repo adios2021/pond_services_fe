@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import clsx from 'clsx'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
@@ -7,8 +6,6 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
-  Button,
 } from '@material-ui/core';
 // @material-ui/icons
 import MenuIcon from '@material-ui/icons/Menu';
@@ -28,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const Header = (props) => {
-    const { className, ...rest } = props;
+    // const { className, ...rest } = props;
+    const { className } = props;
 
     const classes = useStyles();
 

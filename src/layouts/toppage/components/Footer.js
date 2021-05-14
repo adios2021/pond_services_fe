@@ -33,7 +33,7 @@ const Footer = () => {
       <div className={classes.content}>
         <Typography>
           Copyright © 2021 P.O.N.D.Services & Atlantic | Oase, All rights reserved.
-          <a href="https://ad-ios.com" target="_blank" rel="noopener noreferrer">   <img src={logo} className={classes.AdiosLogo}/></a>
+          <a href="https://ad-ios.com" target="_blank" rel="noopener noreferrer">   <img src={logo} alt="company logo" className={classes.AdiosLogo}/></a>
         </Typography>
       </div>
     </footer>

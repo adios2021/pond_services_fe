@@ -1,10 +1,9 @@
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Grid,
   Typography,
   Container,
-  Button
 } from '@material-ui/core';
 
 
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const PageNotFound = () => {
-    let location = useLocation();
+    // let location = useLocation();
     const classes = useStyles();
 
     return (

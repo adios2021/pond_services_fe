@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import { Dialog as CustomDialog } from '@material-ui/core';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
+// import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
@@ -54,33 +54,28 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent);
 
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-  },
-}))(MuiDialogActions);
+// const DialogActions = withStyles((theme) => ({
+//   root: {
+//     margin: 0,
+//     padding: theme.spacing(1),
+//   },
+// }))(MuiDialogActions);
 
 const Dialog = (props) => {
   const classes = useStyles();
-  const { open, handleClickOpenDialog, handleCloseDialog, handleAddField } = props;
-  const [field, setField] = React.useState('');
+  const { open, handleCloseDialog, handleAddField } = props;
 
   const handleClose = () => {
     handleCloseDialog();
   };
 
   const handleSetField = (component) => {
-    console.log('handleSetField', component);
     handleAddField(component);
     handleCloseDialog();
   }
 
   return (
     <div>
-      {/* <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Add Field
-      </Button> */}
       <CustomDialog className={classes.customDialog} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Choose Field
@@ -96,9 +91,7 @@ const Dialog = (props) => {
 }
 
 Dialog.propTypes = {
-  // settings: PropTypes.object,
   open: PropTypes.bool,
-  handleClickOpenDialog: PropTypes.func,
   handleCloseDialog: PropTypes.func,
   handleAddField: PropTypes.func,
 };

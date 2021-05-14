@@ -7,12 +7,26 @@ import {
 // assets
 import img from '../../../assets/images/apc-awg-oase-orig_orig.png';
 const useStyles = makeStyles(theme => ({
+  root: {
+    padding: '0 219px 52px',
+    margin: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 16px',
+    }
+  },
   p: {
     lineHeight: '1.9em',
     color: '#000000!important',
   },
   description: {
     padding: '27px 0 1em',
+  },
+  img: {
+    maxWidth: '25%',
+    height: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '60s%',
+    }
   }
 }));
 
@@ -20,10 +34,10 @@ const LastSection = () => {
   const classes = useStyles();
   return (
     <>
-      <div style={{padding: '0 219px 52px', margin: 'auto'}}>
+      <div className={classes.root}>
         <Grid item xs={12}style={{marginTop: 30}}>
-          <Grid xs={12}>
-            <img src={img} style={{maxWidth: '25%', height: 'auto',}}/>
+          <Grid item xs={12}>
+            <img className={classes.img} src={img}/>
           </Grid>
         </Grid>
         <Grid item xs={12} className={classes.description}>

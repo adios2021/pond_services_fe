@@ -1,4 +1,3 @@
-import { Profiler } from 'react';
 import request from './request';
 
 const auth = {

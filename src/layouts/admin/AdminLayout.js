@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
-import { Grid, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar'

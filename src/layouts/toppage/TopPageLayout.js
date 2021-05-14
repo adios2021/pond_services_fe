@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 import Topbar from './components/Topbar'
 import Footer from './components/Footer'

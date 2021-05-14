@@ -2,8 +2,6 @@ import React, { Suspense } from 'react';
 import { 
   Switch,
   Route,
-  Redirect,
-  withRouter,
   Router as ReactRouter,
 } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
@@ -15,7 +13,9 @@ import { Loader } from '../components';
 const token = localStorage.getItem('pond_services');
 
 const PrivateRoute = (props) => {
-  const { history, path, exact, layout, component, renderLoader, ...rest } = props;
+  // const { history, path, exact, layout, component, renderLoader, ...rest } = props;
+  const { history, path, exact, layout, component, renderLoader } = props;
+
   const Component = component;
   const Layout = layout;
 
