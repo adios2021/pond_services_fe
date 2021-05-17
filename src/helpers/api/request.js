@@ -9,8 +9,7 @@ const request = {
   get(url, query = {}) {
     return new Promise( (resolve, reject) => {
       superagent
-          // .get(`${process.env.REACT_APP_API_URL}${url}`)
-          .get(`http://localhost:8000/v1/${url}`)
+          .get(`${process.env.REACT_APP_API_URL}${url}`)
           .set('Accept', 'application/json')
           .set('Content-Type', 'application/json')
           .set('Cache-Control', 'no-cache')
@@ -31,8 +30,7 @@ const request = {
     console.log('post', body);
     return new Promise(function (resolve, reject){
       superagent
-        .post('http://localhost:8000/v1/oauth/token')
-        // .post(`${process.env.REACT_APP_API_URL}${url}`)
+        .post(`${process.env.REACT_APP_API_URL}${url}`)
         .set('Accept', 'application/json')
         .set('Content-Type', 'application/json')
         // .set('Authorization', `Bearer ${getToken()}`)
